@@ -1,0 +1,12 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.container {
+  width: min(100% - $gap * 2, $ul);
+
+  margin-inline: auto;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}

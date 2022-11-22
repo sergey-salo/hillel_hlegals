@@ -1,0 +1,15 @@
+@use "../presets" as *;
+
+%container {
+  width: min(100% - 40px, $ul);
+
+  margin-inline: auto;
+}
+
+%text-liner-gradient {
+  background: $bg-gradient-red-text2;
+  -webkit-background-clip: text;
+          background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}

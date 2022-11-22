@@ -1,0 +1,113 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.page-header {
+  position: relative;
+  // overflow-x: hidden;
+
+  max-width: 100%;
+
+  background: $bg-gradient-soft;
+
+  @include md-min {
+    &::before {
+      content: "";
+
+      background-image: url(../img/Frame2.svg);
+      background-repeat: no-repeat;
+      background-position: 50% 100%;
+      background-size: 85vh;
+
+      @include abs-position;
+    }
+  }
+
+  &::after {
+    content: "";
+
+    background: linear-gradient(to top, $color-primary 0%, transparent 100%);
+
+    @include abs-position(70%);
+  }
+
+  &__grid {
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    display: grid;
+
+    @extend %container;
+    gap: $gap;
+    grid-template-columns: auto 1fr;
+    @include sm-min {
+      padding-top: 50px;
+
+      grid-template-areas: "logo actions" "logo menu";
+    }
+    @include sm {
+      padding-top: $gap;
+
+      grid-template-areas: "actions actions" "logo menu";
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__menu {
+    grid-area: menu;
+  }
+
+  &__actions {
+    grid-area: actions;
+  }
+
+  &__content {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+
+    &-title {
+      position: relative;
+      z-index: 1;
+
+      max-width: 640px;
+      margin: 0;
+      padding: $gap;
+
+      text-align: center;
+
+      color: $color-white;
+
+      font-size: 38px;
+      font-weight: 500;
+    }
+
+    &-image {
+      position: absolute;
+      bottom: 0;
+
+      @include md-min {
+        height: 63vh;
+      }
+      @include md {
+        height: 67vh;
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    //todo: показать
+
+    display: none;
+  }
+}
