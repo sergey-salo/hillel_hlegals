@@ -35,6 +35,10 @@
     background-color: $color-gray-bg-text;
   }
 
+  &__page-link {
+    color: $color-gray-bg-text;
+  }
+
   &__container {
     @extend %container;
   }
@@ -75,7 +79,7 @@
 
     background: $bg-gradient-red-text;
     -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
 
     font-size: 42px;
     line-height: 50px;

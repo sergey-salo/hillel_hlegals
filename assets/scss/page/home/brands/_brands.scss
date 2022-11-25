@@ -10,23 +10,29 @@
     padding-bottom: 30px;
 
     text-align: center;
-  }
-  &__content {
-    // margin-right: -20px;
-    // margin-left: -20px;
-    display: grid;
 
-    grid-auto-rows: 125px;
-    @include lg-min {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    display: grid;
+    grid-auto-rows: 120px;
+
+    @include sm-min {
       grid-template-columns: repeat(4, 1fr);
     }
-    @include lg-md {
+
+    @include sm-xs {
       grid-template-columns: repeat(3, 1fr);
     }
-    @include md-sm {
+
+    @include xs-ux {
       grid-template-columns: repeat(2, 1fr);
     }
-    @include sm {
+
+    @include ux {
       grid-template-columns: repeat(1, 1fr);
     }
   }
@@ -34,21 +40,9 @@
 
 .brand-item {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  &__picture {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    // max-width: 362px;
-    // max-width: 100%;
-    // border: 1px solid;
-  }
-  &__image {
-    // width: 100%;
-    // margin-left: auto;
-    // margin-right: auto;
-  }
   &--hillel {
     background-color: #1c4280;
   }
@@ -56,33 +50,43 @@
   &--wanna-biz {
     background-color: #143646;
   }
+
   &--tapgerine {
     background-color: #f48b30;
   }
+
   &--3dlook {
     background-color: #9e4dc3;
   }
+
   &--orangear {
     background-color: #fd9339;
   }
+
   &--adtelligent {
     background-color: #e2e2e4;
   }
+
   &--clickky {
     background-color: #c71c36;
   }
+
   &--eco-leasing {
     background-color: #dcf3f9;
   }
+
   &--infra-tek {
     background-color: #eaeaea;
   }
+
   &--city-park {
     background-color: #282240;
   }
+
   &--art-print-studio {
     background-color: #1d4568;
   }
+
   &--unlimited-card {
     background-color: #000000;
   }

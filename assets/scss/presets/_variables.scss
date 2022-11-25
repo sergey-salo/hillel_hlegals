@@ -4,10 +4,36 @@ $xl: 1200px;
 $md: 992px;
 $sm: 768px;
 $xs: 576px;
+$ux: 375px;
+
 $gap: 20px;
 $gap-sm: $gap * 0.5;
 $gap-md: $gap * 0.75;
+$gap-lg: $gap * 1.5;
 $gap-xl: $gap * 2;
+
 $mobile-menu-size: 170px;
+
 $font-primary: "TT Norms", sans-serif;
 $font-size: 16px;
+
+$line-height-sm: 1;
+$line-height: 1.2;
+$line-height-lg: 1.4;
+$line-height-xl: 1.5;
+$line-height-ul: 1.67;
+
+// Desktop SD - 1440px
+// Desktop HD - 1920px
+// Tablet HD  - 1024px
+// Tablet SD  - 768 px
+// Mobile     - 375 px
+
+// $ul: 1290px;
+// $xl: 1200px;
+// $lg: 992px;
+// $md: 768px;
+// $sm: 576px;
+// $xs: 480px;
+// $xx: 420px;
+// $ux: 360px;
