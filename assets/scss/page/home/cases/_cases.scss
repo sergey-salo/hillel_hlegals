@@ -1,0 +1,118 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.cases {
+  margin-top: 40px;
+
+  &__container {
+    display: grid;
+
+    border: 1px solid $color-white;
+    border-radius: 12px;
+    background-color: $color-gray-bg;
+
+    @extend %container;
+    @include md-min {
+      grid-template-areas:
+        "ttl ttl itm-2 itm-2 itm-3"
+        "itm-1 itm-1 itm-2 itm-2 itm-3"
+        "itm-4 itm-5 itm-5 itm-6 itm-6";
+      grid-template-columns: 1fr 0.5fr 1fr 0.5fr 1.5fr;
+    }
+    @include md-xs {
+      grid-template-areas:
+        "ttl ttl itm-2 itm-2 "
+        "itm-1 itm-1 itm-2 itm-2"
+        "itm-3 itm-3 itm-4 itm-4"
+        "itm-5 itm-5 itm-6 itm-6";
+      grid-template-columns: 1fr 0.5fr 1fr 0.5fr;
+    }
+    @include xs {
+      grid-template-areas:
+        "ttl" "itm-1" "itm-2" "itm-3"
+        "itm-4" "itm-5" "itm-6";
+      grid-template-columns: 1fr;
+    }
+
+    & div:nth-of-type(1) {
+      grid-area: ttl;
+    }
+    & div:nth-of-type(2) {
+      grid-area: itm-1;
+    }
+    & div:nth-of-type(3) {
+      grid-area: itm-2;
+    }
+    & div:nth-of-type(4) {
+      grid-area: itm-3;
+    }
+    & div:nth-of-type(5) {
+      grid-area: itm-4;
+    }
+    & div:nth-of-type(6) {
+      grid-area: itm-5;
+    }
+    & div:nth-of-type(7) {
+      grid-area: itm-6;
+    }
+  }
+
+  &__header {
+    @extend %case-item-border;
+  }
+
+  &__title {
+    padding: 20px;
+
+    text-align: left;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: $color-accent;
+
+    font-size: 14px;
+    line-height: $line-height; // 1.214
+  }
+}
+
+.case-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  @extend %case-item-border;
+
+  &__title {
+    padding: 48px 20px 0;
+
+    color: $color-primary-soft;
+
+    line-height: $line-height; //1.16
+
+    @include md-min {
+      font-size: 24px;
+    }
+    @include md {
+      font-size: 20px;
+    }
+  }
+
+  &__company {
+    padding: 20px;
+
+    color: $color-gray-bg-text;
+
+    line-height: 1.5; // 1.44
+
+    @include md-min {
+      font-size: 18px;
+    }
+    @include md {
+      font-size: 17px;
+    }
+  }
+}
+
+%case-item-border {
+  border: 1px solid $color-white;
+}

@@ -190,6 +190,7 @@ template {
   src: url("TTNorms-Regular.eot");
   src: local("TT Norms Regular"), local("TTNorms-Regular"), url("../fonts/TTNorms-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-Regular.woff2") format("woff2"), url("../fonts/TTNorms-Regular.woff") format("woff"), url("../fonts/TTNorms-Regular.ttf") format("truetype");
 }
+.cases__container,
 .services__container,
 .experience__container,
 .page-header__grid {
@@ -703,9 +704,82 @@ a {
   grid-area: desc;
 }
 
-.brands {
-  margin-top: 20px;
+.cases {
+  margin-top: 40px;
 }
+.cases__container {
+  display: grid;
+
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  background-color: #f5f5fa;
+}
+.cases__container div:nth-of-type(1) {
+  grid-area: ttl;
+}
+.cases__container div:nth-of-type(2) {
+  grid-area: itm-1;
+}
+.cases__container div:nth-of-type(3) {
+  grid-area: itm-2;
+}
+.cases__container div:nth-of-type(4) {
+  grid-area: itm-3;
+}
+.cases__container div:nth-of-type(5) {
+  grid-area: itm-4;
+}
+.cases__container div:nth-of-type(6) {
+  grid-area: itm-5;
+}
+.cases__container div:nth-of-type(7) {
+  grid-area: itm-6;
+}
+.cases__title {
+  padding: 20px;
+
+  text-align: left;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: #f0145a;
+
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.case-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.case-item__title {
+  padding: 48px 20px 0;
+
+  color: #686887;
+
+  line-height: 1.2;
+}
+.case-item__company {
+  padding: 20px;
+
+  color: #b3b3ba;
+
+  line-height: 1.5;
+}
+
+.cases__header,
+.case-item {
+  border: 1px solid #ffffff;
+}
+
 .brands__title {
   margin: 0;
   padding-top: 30px;
@@ -964,6 +1038,16 @@ a {
   .slider__indicators {
     display: none;
   }
+  .cases__container {
+    grid-template-areas: "ttl ttl itm-2 itm-2 itm-3" "itm-1 itm-1 itm-2 itm-2 itm-3" "itm-4 itm-5 itm-5 itm-6 itm-6";
+    grid-template-columns: 1fr 0.5fr 1fr 0.5fr 1.5fr;
+  }
+  .case-item__title {
+    font-size: 24px;
+  }
+  .case-item__company {
+    font-size: 18px;
+  }
 }
 @media (min-width: 1200px) {
   .services__grid {
@@ -1038,6 +1122,12 @@ a {
     font-size: 16px;
     line-height: 22px;
   }
+  .case-item__title {
+    font-size: 20px;
+  }
+  .case-item__company {
+    font-size: 17px;
+  }
   .footer__content {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
@@ -1056,6 +1146,10 @@ a {
 @media (max-width: 991.8px) and (min-width: 576px) {
   .page-header__content-image {
     height: 63vh;
+  }
+  .cases__container {
+    grid-template-areas: "ttl ttl itm-2 itm-2 " "itm-1 itm-1 itm-2 itm-2" "itm-3 itm-3 itm-4 itm-4" "itm-5 itm-5 itm-6 itm-6";
+    grid-template-columns: 1fr 0.5fr 1fr 0.5fr;
   }
 }
 @media (max-width: 767.8px) {
@@ -1099,6 +1193,10 @@ a {
 @media (max-width: 575.8px) {
   .page-header__content-image {
     bottom: 31px;
+  }
+  .cases__container {
+    grid-template-areas: "ttl" "itm-1" "itm-2" "itm-3" "itm-4" "itm-5" "itm-6";
+    grid-template-columns: 1fr;
   }
   .footer__contacts {
     -webkit-box-orient: vertical;
