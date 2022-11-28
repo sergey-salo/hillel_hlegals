@@ -1,0 +1,194 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.team {
+  margin-top: 60px;
+
+  &__container {
+    border: 1px solid $color-white;
+    border-radius: 12px;
+    background-color: $color-gray-bg;
+
+    @extend %container;
+    @include xs {
+      padding: 20px 0 20px 20px;
+    }
+  }
+
+  &__indicators {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    gap: 20px;
+  }
+}
+
+.team-item {
+  display: grid;
+
+  @include lg-min {
+    column-gap: 40px;
+    grid-template-areas: "pic act"
+    "pic qt"
+    "pic nm"
+    "pic ps";
+    grid-template-rows: 60px minmax(200px, 40%) 40px 20px;
+  }
+  @include lg-xl {
+    column-gap: 40px;
+    grid-template-areas: "pic act"
+    "pic qt"
+    "pic nm"
+    "pic ps";
+    grid-template-rows: 60px minmax(200px, 50%) 40px 20px;
+  }
+  @include xl-md {
+    column-gap: 40px;
+    grid-template-areas: "pic act"
+    "pic qt"
+    "pic nm"
+    "pic ps";
+    grid-template-rows: 60px minmax(200px, 55%) 40px 15px;
+  }
+  @include md-xs {
+    padding-bottom: 20px;
+    padding-left: 20px;
+
+    column-gap: 20px;
+    grid-template-areas: "act act"
+    "qt qt"
+    "pic nm"
+    "pic ps";
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 60px minmax(200px, 40%) 50px 100px;
+  }
+  @include xs {
+    padding-bottom: 20px;
+    padding-left: 20px;
+
+    column-gap: 10px;
+    grid-template-areas: "act act"
+    "qt qt"
+    "pic nm"
+    "pic ps";
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 20px auto 40px 20px;
+  }
+
+  &__picture {
+    grid-area: pic;
+    @include md-min {
+      position: relative;
+
+      overflow: hidden;
+
+      width: 413px;
+      height: 500px;
+
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+    }
+    @include md-xs {
+      position: relative;
+
+      overflow: hidden;
+
+      width: 150px;
+      height: 150px;
+
+      border-radius: 75px;
+    }
+    @include xs {
+      position: relative;
+
+      overflow: hidden;
+
+      width: 60px;
+      height: 60px;
+
+      border-radius: 30px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+
+    @include md-min {
+      position: absolute;
+      left: -10%;
+    }
+    @include md {
+      width: 100%;
+    }
+  }
+
+  &__actions {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #24a3ff;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: $line-height; // 1.214
+
+    grid-area: act;
+    @include xs-min {
+      padding-top: 40px;
+    }
+  }
+
+  &__quote {
+    background: linear-gradient(90.13deg, #f0145a 0.84%, #ef8080 99.96%);
+    -webkit-background-clip: text;
+
+    font-weight: 700;
+    line-height: $line-height; // 1.19
+
+    grid-area: qt;
+    @include xl-min {
+      font-size: 42px;
+    }
+    @include xl-md {
+      font-size: 38px;
+    }
+    @include md-sm {
+      padding-bottom: 20px;
+
+      font-size: 37px;
+    }
+    @include sm {
+      padding-bottom: 15px;
+
+      font-size: 32px;
+    }
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__name {
+    color: $color-gray-bg-text;
+
+    font-size: 18px;
+    font-weight: bold;
+    line-height: $line-height; // 1.16
+
+    grid-area: nm;
+    @include xs-min {
+      padding-top: 20px;
+    }
+    @include xs {
+      padding-bottom: 5px;
+    }
+  }
+
+  &__position {
+    color: $color-gray-bg-text;
+
+    line-height: $line-height-lg; // 1.375
+
+    grid-area: ps;
+  }
+}

@@ -7,30 +7,27 @@
   &__container {
     display: grid;
 
-    border: 1px solid $color-white;
     border-radius: 12px;
     background-color: $color-gray-bg;
 
+    @extend %case-item-border;
     @extend %container;
     @include md-min {
-      grid-template-areas:
-        "ttl ttl itm-2 itm-2 itm-3"
-        "itm-1 itm-1 itm-2 itm-2 itm-3"
-        "itm-4 itm-5 itm-5 itm-6 itm-6";
+      grid-template-areas: "ttl ttl itm-2 itm-2 itm-3"
+      "itm-1 itm-1 itm-2 itm-2 itm-3"
+      "itm-4 itm-5 itm-5 itm-6 itm-6";
       grid-template-columns: 1fr 0.5fr 1fr 0.5fr 1.5fr;
     }
     @include md-xs {
-      grid-template-areas:
-        "ttl ttl itm-2 itm-2 "
-        "itm-1 itm-1 itm-2 itm-2"
-        "itm-3 itm-3 itm-4 itm-4"
-        "itm-5 itm-5 itm-6 itm-6";
+      grid-template-areas: "ttl ttl itm-2 itm-2 "
+      "itm-1 itm-1 itm-2 itm-2"
+      "itm-3 itm-3 itm-4 itm-4"
+      "itm-5 itm-5 itm-6 itm-6";
       grid-template-columns: 1fr 0.5fr 1fr 0.5fr;
     }
     @include xs {
-      grid-template-areas:
-        "ttl" "itm-1" "itm-2" "itm-3"
-        "itm-4" "itm-5" "itm-6";
+      grid-template-areas: "ttl" "itm-1" "itm-2" "itm-3"
+      "itm-4" "itm-5" "itm-6";
       grid-template-columns: 1fr;
     }
 
