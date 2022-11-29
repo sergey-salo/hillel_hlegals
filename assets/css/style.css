@@ -308,30 +308,25 @@ a {
   grid-template-columns: auto 1fr;
 }
 .page-header__picture {
+  position: relative;
+
   grid-area: logo;
 }
 .page-header__link {
   position: relative;
 }
-.page-header__link::after {
-  position: absolute;
-  right: -25px;
-
-  content: url("../img/slash.svg");
-}
 .page-header__page-name {
   position: absolute;
-  left: 181px;
 
   color: #ffffff;
 
-  font-size: 38px;
   line-height: 1.2;
+}
+.page-header__page-name::before {
+  position: absolute;
 }
 .page-header__page-name::after {
   position: absolute;
-
-  content: url("../img/symbol-slash.svg");
 }
 .page-header__menu {
   grid-area: menu;
@@ -373,6 +368,8 @@ a {
 .page-header__content-image {
   position: absolute;
   bottom: 0;
+
+  height: 63vh;
 }
 .page-header__button {
   position: absolute;
@@ -685,9 +682,6 @@ a {
 }
 .services__page-link {
   color: #b3b3ba;
-}
-.services--secondary {
-  padding-top: 180px;
 }
 .services__title {
   padding-bottom: 67px;
@@ -1174,6 +1168,22 @@ a {
   line-height: 19px;
 }
 @media (min-width: 576px) {
+  .page-header__page-name {
+    left: 181px;
+
+    font-size: 38px;
+  }
+  .page-header__page-name::before {
+    left: -20px;
+
+    content: url("../img/slash.svg");
+  }
+  .page-header__page-name::after {
+    content: url("../img/symbol-slash.svg");
+  }
+  .services--secondary {
+    padding-top: 180px;
+  }
   .team-item__actions {
     padding-top: 40px;
   }
@@ -1253,10 +1263,8 @@ a {
   .page-header__grid--secondary {
     padding-top: 50px;
 
+    gap: 20px;
     grid-template-areas: "logo actions" "logo menu";
-  }
-  .page-header__content-image {
-    height: 63vh;
   }
   .experience {
     padding-top: 80px;
@@ -1375,10 +1383,8 @@ a {
   .page-header__grid--secondary {
     padding-top: 20px;
 
+    gap: 20px;
     grid-template-areas: "actions actions" "logo menu";
-  }
-  .menu__btn--secondary {
-    display: block;
   }
   .menu__list--secondary {
     position: absolute;
@@ -1483,8 +1489,10 @@ a {
   }
 }
 @media (max-width: 991.8px) and (min-width: 576px) {
-  .page-header__content-image {
-    height: 63vh;
+  .menu__btn--secondary {
+    display: block;
+
+    margin: 20px 0 20px auto;
   }
   .team-item {
     padding-bottom: 20px;
@@ -1569,8 +1577,30 @@ a {
   }
 }
 @media (max-width: 575.8px) {
-  .page-header__content-image {
-    bottom: 31px;
+  .page-header__picture-image--secondary {
+    height: 50px;
+  }
+  .page-header__page-name {
+    top: 5px;
+    left: 140px;
+
+    font-size: 19px;
+  }
+  .page-header__page-name::before {
+    left: -15px;
+
+    content: url("../img/slash-sm.svg");
+  }
+  .page-header__page-name::after {
+    right: -25px;
+
+    content: url("../img/symbol-slash-sm.svg");
+  }
+  .menu__btn--secondary {
+    margin: 15px 0 15px auto;
+  }
+  .services--secondary {
+    padding-top: 150px;
   }
   .team__container {
     padding: 20px 0 20px 20px;

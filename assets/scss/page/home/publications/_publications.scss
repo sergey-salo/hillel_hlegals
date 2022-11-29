@@ -43,16 +43,11 @@
 
   &__content {
     margin-top: 40px;
-    // column-count: auto;
-    // column-width: 413px;
-    // column-gap: 40px;
-    // // columns: 3;
 
     @include xs-min {
       column-count: auto;
       column-gap: 40px;
       column-width: 413px;
-      // columns: 3;
     }
     @include xs {
       display: flex;

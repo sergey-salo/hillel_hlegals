@@ -20,8 +20,13 @@
     }
 
     &--secondary {
-      @include md {
+      @include md-xs {
         display: block;
+
+        margin: 20px 0 20px auto;
+      }
+      @include xs {
+        margin: 15px 0 15px auto;
       }
     }
 

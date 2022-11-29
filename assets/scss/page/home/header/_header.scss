@@ -3,7 +3,6 @@
 
 .page-header {
   position: relative;
-  // overflow-x: hidden;
 
   max-width: 100%;
 
@@ -57,44 +56,81 @@
       @include md-min {
         padding-top: 50px;
 
+        gap: $gap;
         grid-template-areas: "logo actions" "logo menu";
       }
       @include md {
         padding-top: $gap;
 
+        gap: $gap;
         grid-template-areas: "actions actions" "logo menu";
       }
     }
   }
 
   &__picture {
+    position: relative;
+
     grid-area: logo;
+  }
+
+  &__picture-image {
+    &--secondary {
+      @include xs {
+        height: 50px;
+      }
+    }
   }
 
   &__link {
     position: relative;
-
-    &::after {
-      position: absolute;
-      right: -25px;
-
-      content: url("../img/slash.svg");
-    }
   }
 
   &__page-name {
     position: absolute;
-    left: 181px;
 
     color: $color-white;
 
-    font-size: 38px;
     line-height: $line-height; //1.18
+
+    @include xs-min {
+      left: 181px;
+
+      font-size: 38px;
+    }
+    @include xs {
+      top: 5px;
+      left: 140px;
+
+      font-size: 19px;
+    }
+
+    &::before {
+      position: absolute;
+
+      @include xs-min {
+        left: -20px;
+
+        content: url("../img/slash.svg");
+      }
+      @include xs {
+        left: -15px;
+
+        content: url("../img/slash-sm.svg");
+      }
+    }
 
     &::after {
       position: absolute;
 
-      content: url("../img/symbol-slash.svg");
+      @include xs-min {
+        content: url("../img/symbol-slash.svg");
+      }
+      @include xs {
+        right: -25px;
+
+        content: url("../img/symbol-slash-sm.svg");
+      }
     }
   }
 
@@ -136,15 +172,7 @@
       position: absolute;
       bottom: 0;
 
-      @include md-min {
-        height: 63vh;
-      }
-      @include md-xs {
-        height: 63vh;
-      }
-      @include xs {
-        bottom: 31px;
-      }
+      height: 63vh;
     }
   }
 
