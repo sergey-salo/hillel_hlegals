@@ -47,6 +47,12 @@
       display: none;
     }
 
+    &--secondary {
+      @include md {
+        display: none;
+      }
+    }
+
     &-link {
       color: inherit;
     }

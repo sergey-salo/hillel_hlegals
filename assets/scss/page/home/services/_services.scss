@@ -43,6 +43,10 @@
     @extend %container;
   }
 
+  &--secondary {
+    padding-top: 180px;
+  }
+
   // &__header {
   //   letter-spacing: 1px;
   //   text-transform: uppercase;

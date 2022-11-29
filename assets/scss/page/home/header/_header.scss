@@ -52,10 +52,50 @@
 
       grid-template-areas: "actions actions" "logo menu";
     }
+
+    &--secondary {
+      @include md-min {
+        padding-top: 50px;
+
+        grid-template-areas: "logo actions" "logo menu";
+      }
+      @include md {
+        padding-top: $gap;
+
+        grid-template-areas: "actions actions" "logo menu";
+      }
+    }
   }
 
   &__picture {
     grid-area: logo;
+  }
+
+  &__link {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      right: -25px;
+
+      content: url("../img/slash.svg");
+    }
+  }
+
+  &__page-name {
+    position: absolute;
+    left: 181px;
+
+    color: $color-white;
+
+    font-size: 38px;
+    line-height: $line-height; //1.18
+
+    &::after {
+      position: absolute;
+
+      content: url("../img/symbol-slash.svg");
+    }
   }
 
   &__menu {
@@ -110,7 +150,6 @@
 
   &__button {
     position: absolute;
-    //todo: показать
 
     display: none;
   }

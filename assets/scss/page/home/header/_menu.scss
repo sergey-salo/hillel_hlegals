@@ -5,6 +5,8 @@
   &__btn {
     position: relative;
 
+    display: none;
+
     width: 30px;
     height: 25px;
     margin: 25px 0 25px auto;
@@ -13,8 +15,14 @@
     transition: 0.5s ease-in-out;
     transform: rotate(0deg);
 
-    @include sm-min {
-      display: none;
+    @include sm {
+      display: block;
+    }
+
+    &--secondary {
+      @include md {
+        display: block;
+      }
     }
 
     span {
@@ -124,16 +132,42 @@
       background-color: $color-primary;
     }
 
+    &--secondary {
+      @include md {
+        position: absolute;
+        top: 0;
+        right: calc(-170px - 20px);
+
+        display: none;
+
+        width: $mobile-menu-size;
+        height: 100vh;
+        padding: $gap;
+
+        background-color: $color-primary;
+      }
+    }
+
     &.active {
       display: block;
     }
   }
 
-
-
   &__link {
     color: $color-white;
 
     font-size: 18px;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  & .-active {
+    border-bottom: 2px solid $color-white;
+  }
+
+  & .-active:hover {
+    border-bottom: 2px solid $color-accent;
   }
 }

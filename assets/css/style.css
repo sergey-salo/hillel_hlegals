@@ -309,6 +309,29 @@ a {
 .page-header__picture {
   grid-area: logo;
 }
+.page-header__link {
+  position: relative;
+}
+.page-header__link::after {
+  position: absolute;
+  right: -25px;
+
+  content: url("../img/slash.svg");
+}
+.page-header__page-name {
+  position: absolute;
+  left: 181px;
+
+  color: #ffffff;
+
+  font-size: 38px;
+  line-height: 1.2;
+}
+.page-header__page-name::after {
+  position: absolute;
+
+  content: url("../img/symbol-slash.svg");
+}
 .page-header__menu {
   grid-area: menu;
 }
@@ -358,6 +381,8 @@ a {
 
 .menu__btn {
   position: relative;
+
+  display: none;
 
   width: 30px;
   height: 25px;
@@ -471,6 +496,15 @@ a {
   color: #ffffff;
 
   font-size: 18px;
+}
+.menu__link:hover {
+  color: #f0145a;
+}
+.menu .-active {
+  border-bottom: 2px solid #ffffff;
+}
+.menu .-active:hover {
+  border-bottom: 2px solid #f0145a;
 }
 
 .actions {
@@ -649,6 +683,9 @@ a {
 }
 .services__page-link {
   color: #b3b3ba;
+}
+.services--secondary {
+  padding-top: 180px;
 }
 .services__title {
   padding-bottom: 67px;
@@ -1040,9 +1077,6 @@ a {
 
     grid-template-areas: "logo actions" "logo menu";
   }
-  .menu__btn {
-    display: none;
-  }
   .actions {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
@@ -1068,6 +1102,11 @@ a {
     background-repeat: no-repeat;
     background-position: 50% 100%;
     background-size: 85vh;
+  }
+  .page-header__grid--secondary {
+    padding-top: 50px;
+
+    grid-template-areas: "logo actions" "logo menu";
   }
   .page-header__content-image {
     height: 63vh;
@@ -1186,6 +1225,30 @@ a {
   }
 }
 @media (max-width: 991.8px) {
+  .page-header__grid--secondary {
+    padding-top: 20px;
+
+    grid-template-areas: "actions actions" "logo menu";
+  }
+  .menu__btn--secondary {
+    display: block;
+  }
+  .menu__list--secondary {
+    position: absolute;
+    top: 0;
+    right: -190px;
+
+    display: none;
+
+    width: 170px;
+    height: 100vh;
+    padding: 20px;
+
+    background-color: #323264;
+  }
+  .actions__locations--secondary {
+    display: none;
+  }
   .experience {
     padding-top: 40px;
     padding-bottom: 45px;
@@ -1314,6 +1377,9 @@ a {
     padding-top: 20px;
 
     grid-template-areas: "actions actions" "logo menu";
+  }
+  .menu__btn {
+    display: block;
   }
   .menu__list {
     position: absolute;
