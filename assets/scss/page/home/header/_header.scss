@@ -150,7 +150,8 @@
 
   &__button {
     position: absolute;
-
-    display: none;
+    z-index: 1;
+    right: calc(50% - 22px);
+    bottom: 20px;
   }
 }
